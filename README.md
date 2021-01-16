@@ -9,7 +9,13 @@ Formes des bâtiments :
 * Carré
 * Rectangle
 * Forme en L
+#
 Type de bâtiments :
+#
+Column 1|Column 2
+--------------|--------------
+Row element| Row element
+#
  Nom | Nombre | Surface totale min | Surface totale max
 --------------|--------------|--------------|--------------
  Bâtiment scolaire | 3 | 0 | 50000 m²
