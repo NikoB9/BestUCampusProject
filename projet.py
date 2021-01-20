@@ -1,0 +1,36 @@
+import pyproj
+from shapely.geometry import Polygon
+
+"""test batiment polytech Salome : 
+coordinates_wgs84 = [[2.17052259106493,48.70894558902779],
+[2.171390007585461,48.70895373305775],
+[2.171403232974205,48.70831874959825],
+[2.172532756656471,48.70829960928263],
+[2.172548045801741,48.70921677995045],
+[2.170467957253095,48.70925473741478],
+[2.17052259106493,48.70894558902779]]"""
+
+"""test batiment central Nicolas : 
+coordinates_wgs84 = [[2.166537374751398,48.71095132821508],
+[2.166468602998526,48.70983576711469],
+[2.167582929990826,48.70982504104365],
+[2.16866302300933,48.70982927134865],
+[2.168673027378643,48.71093357426656],
+[2.167807403199806,48.71094768419172],
+[2.166537374751398,48.71095132821508]]"""
+
+
+coordinates_lambert = []
+
+for c in coordinates_wgs84:
+	x, y = c[0], c[1]
+	WGS84_in = pyproj.Proj(init='epsg:4326')
+	lambert93_out = pyproj.Proj(init='epsg:2154')
+	lat, lon = pyproj.transform(WGS84_in,lambert93_out,x,y)
+
+	coordinates_lambert.append([lat, lon])
+
+p = Polygon(coordinates_lambert)
+print()
+print()
+print(p.area)
