@@ -11,16 +11,20 @@ Formes des bâtiments :
 * Forme en L
 
 Type de bâtiments :
+````
+(Surface Terrain 350 000m²)
+/*** TODO : Pourquoi ces critères ? ***/
+````
 
  Nom | Nombre | Surface totale min | Surface totale max
 --------------|--------------|--------------|--------------
- Bâtiment scolaire | 3 | 0 | 50000 m²
- Lieu de vie | 1 | 0 | 50000 m²
- Jardin | 2 | 0 | 50000 m²
- Potager | 1 | 0 | 50000 m²
- Laboratoire | 1 | 0 | 50000 m²
- Parking | 2 | 0 | 50000 m²
- Complexe sportif | 1 | 0 | 50000 m²
+ Bâtiment scolaire | 3 | 50 000 | 90 000 m²
+ Lieu de vie | 1 | 4 000 | 15 000 m²
+ Jardin | 2 | 10 000 | 40 000 m²
+ Potager | 1 | 5 000 | 20 000 m²
+ Laboratoire | 1 | 15 000 | 40 000 m²
+ Parking | 2 | 10 000 | 30 000 m²
+ Complexe sportif | 1 | 15 000 | 50 000 m²
 
 # Système pour retenir le "meilleur projet"
 ````php
@@ -34,5 +38,5 @@ Pour chaque type de bâtiment :
 |	|	|	TabSurfs <-- surfBS
 |	Recherche Mediane dans TabSurfs
 |	Incrémentation du vote pour l'élève (ou les) qui on la surface Médiane 
-On retient le projet de l'étudiant qui à le plus de votes	
+On retient le projet de l'étudiant qui à le plus de votes (si plusieurs random parmis les gagnants)
 ````
