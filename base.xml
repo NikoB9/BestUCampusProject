@@ -1,0 +1,37 @@
+<resultat>
+	<gagnant nom="nomProjet" fichier="cheminFichier">
+		<batimentsRetenus>
+			<batiment surface="surfaceBat" nom="nomTypeBat" />
+			<batiment surface="surfaceBat" nom="nomTypeBat" />
+			<batiment surface="surfaceBat" nom="nomTypeBat" />
+		</batimentsRetenus>
+		<volonte type="ecolo|bien-être|scientifique"/>
+	<gagnant/>
+
+	<stats>
+		<projets>
+			<projet nom="" fichier="" nbVotes="">
+				<batimentsRetenus>
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+				</batimentsRetenus>
+			</projet>
+			<projet nom="" fichier="" nbVotes="">
+				<batimentsRetenus>
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+					<batiment surface="surfaceBat" nom="nomTypeBat" />
+				</batimentsRetenus>
+			</projet>
+		</projets>
+
+		<general>
+			<medianes>
+				<mediane value="" type="nomTypeBat"/>
+				<mediane value="" type="nomTypeBat"/>
+			</medianes>
+			<volonte type="ecolo|bien-être|scientifique"/>
+		</general>
+	</stats>
+</resultat>

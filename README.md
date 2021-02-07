@@ -41,24 +41,20 @@ Pour chaque type de bâtiment :
 On retient le projet de l'étudiant qui à le plus de votes (si plusieurs random parmis les gagnants)
 ````
 
-# Fichier de statistiques - Première partie du fichier de résultat XML 
+# Choix du meilleur projet - Première partie du fichier de résultat XML 
+* Nom du projet retenu
+* Bâtiments retenus grâce à la Médiane
+* Volonté du projet : écologie | bien-être étudiant | Scientifique ; Ce choix est réalisé en analysant la surface de certains ensemble de bâtiment par rapport à d'autres sur un même projet.
+
+# Fichier de statistiques - Deuxième partie du fichier de résultat XML 
 * Pour chaque projet on retient :
 
-1- combien de type de bâtiment correspondent à la norme (taille des ensemble de bâtiments compris entre "Surface totale min" et "Surface totale max").
+1- Nombre de bâtiments retenus comme meilleur choix (nombre de votes obtenus).
 
-2- volonté du projet : écologie (de grands espaces verts et peu de parking) | bien-être étudiant (grand lieu de vie et grand centre sportif) | Scientifique (un labo et des batiment scolaires plus qu'autre chose) ; Ce choix est réalisé en analysant la surface de certains ensemble de bâtiment par rapport à d'autres sur un même projet.
-
-3- Nombre de bâtiments retenus comme meilleur choix (nombre de votes obtenus).
-
-4- Taille explicite pour chaque type de bâtiment (ex : 3 bat scolaire de 10 000 m² => 30 000 m²)
+2- Liste des bâtiments qui ont reçu un vote 
 
 * De manière générale :
 
 1- Mediane de taille pour chaque type de bâtiment parmis tous les projets
 
 2- Esprit générale des contributeurs : écologie | bien-être étudiant | scientifique
-
-# Choix du meilleur projet - Deuxième partie du fichier de résultat XML 
-* Nom du projet retenu
-* Bâtiments retenus grâce à la Médiane
-* Volonté du projet : écologie | bien-être étudiant | scientifique

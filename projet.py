@@ -10,23 +10,56 @@ class TypeBatiment(object):
 	nom = ""
 	nombre = 0
 	aireTotale = 0
+	vote = False
 	"""docstring for Batiment"""
-	def __init__(self, nom):
-		super(Batiment, self).__init__()
+	def __init__(self, nom, surface):
+		super(TypeBatiment, self).__init__()
 		self.nom = nom
+		self.aireTotale = surface
+		self.nombre = 1
+
+	def addSurface(self, surface):
+		self.aireTotale += surface
+		self.nombre += 1
+
+	def __str__(self):
+		return "type : "+self.nom + "; nombre de bâtiments : " + str(self.nombre) + "; aire : " + str(self.aireTotale) + "; vote : " + str(self.vote)
 
 
 class Projet(object):
 	nom = ""
-	description = ""
-	BatList = []
+	BatList = {}
 	votes = 0
 
 	"""docstring for Projet"""
-	def __init__(self, nom, description):
+	def __init__(self, nom):
 		super(Projet, self).__init__()
 		self.nom = nom
-		self.description = description
+
+	def addBatiment(self, TypeBatiment):
+		self.BatList[TypeBatiment.nom] = TypeBatiment
+
+	def editBatiment(self, aire, nomB):
+		self.BatList[nomB].addSurface(aire)
+
+	def __str__(self):
+		tostr = "nom : " + self.nom + "; votes : " + str(self.votes) + "; batiments : \n"
+		for bat in self.BatList :
+			tostr += str(self.BatList[bat]) + "\n"
+		return tostr
+
+#liste des tailles pour choisir la médiane
+medList= {}
+medList["bâtiment scolaire"] = []
+medList["parking"] = []
+medList["lieu de vie"] = []
+medList["jardin"] = []
+medList["potager"] = []
+medList["laboratoire"] = []
+medList["complexe sportif"] = []
+
+#liste de dict projets pour accéder aux projets et procéder au vote {nom : projet}
+projets = []
 
 #Dossier contenant tous les projets
 path = 'StudentProjects' 
@@ -45,33 +78,34 @@ for name in files:
 		#nom du projet
 		print()
 		nomProjet = genBalise[0].getElementsByTagName("name")
+		nomP = "Projet sans nom"
 		if len(nomProjet) > 0:
-			print("Nom du projet : ", nomProjet[0].firstChild.data)
+			nomP = nomProjet[0].firstChild.data
+			print("Nom du projet : ", nomP)
 		else :
-			print("Projet sans nom")
-
-		#description du projet
-		descProjet = genBalise[0].getElementsByTagName("description")
-		if len(descProjet) > 0:
-			print("Description du projet : ", descProjet[0].firstChild.data)
-		else :
-			print("Projet sans description")
+			print(nomP)
 
 		print()
+
+		#création du projet
+		projet = Projet(nomP)
 
 		#On va aller chercher tous les bâtiments et leurs données
 		batiments = genBalise[0].getElementsByTagName("Placemark")
 		for b in batiments :
 			#nom du bâtiment
 			nomBatiment = b.getElementsByTagName("name")
+			nomB = "Bâtiment sans nom"
 			if len(nomBatiment) > 0:
-				print("Nom du bâtiment : ", nomBatiment[0].firstChild.data)
+				nomB = nomBatiment[0].firstChild.data
+				print("Nom du bâtiment : ", nomB)
 			else :
-				print("Bâtiment sans nom")
+				print(nomB)
 
 
 			#coordonnées
 			coordonnees = b.getElementsByTagName("coordinates")
+			aire = 0
 			if len(coordonnees) > 0:
 				#Mise en forme des coordonnées
 				corSplit = coordonnees[0].firstChild.data.replace("\n", "").replace("\t", "").split(" ")
@@ -95,16 +129,148 @@ for name in files:
 				aire = Polygon(coordinates_lambert).area
 				print("aire : ",aire)
 
+
 			else :
 				print("Bâtiment sans coordonnées")
+
+			#si le type batiment existe on incrémente la surface
+			if nomB in projet.BatList :
+				projet.editBatiment(aire, nomB)
+				
+			#sinon on enregistre le type de bâtiment avec sa surface
+			else :
+				projet.addBatiment(TypeBatiment(nomB, aire))
 
 			print()
 
 		print()
 
+		print(projet)
+
+
+		#remplissage des tableaux pour calcul de mediane
+		for cle in projet.BatList :
+			medList[cle].append(projet.BatList[cle].aireTotale)
+
+		projets.append(projet)
+
 
 	else : 
 		print("Le projet kml est mal formé")
+
+
+
+print()
+
+for p in projets:
+	print(p)
+
+print()
+
+
+
+
+#épurer bâtiments scolaires avec nos critère min max
+i=0
+while i < len(medList["bâtiment scolaire"]):
+
+	print(medList["bâtiment scolaire"][i])
+
+	if medList["bâtiment scolaire"][i] < 50000 or medList["bâtiment scolaire"][i] > 90000:
+
+		medList["bâtiment scolaire"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["bâtiment scolaire"].sort()
+
+#épurer parking avec nos critère min max
+i=0
+while i < len(medList["parking"]):
+
+	if medList["parking"][i] < 10000 or medList["parking"][i] > 30000:
+
+		medList["parking"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["parking"].sort()
+
+#épurer lieu de vie avec nos critère min max
+i=0
+while i < len(medList["lieu de vie"]):
+
+	if medList["lieu de vie"][i] < 4000 or medList["lieu de vie"][i] > 15000:
+
+		medList["lieu de vie"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["lieu de vie"].sort()
+
+#épurer jardin avec nos critère min max
+i=0
+while i < len(medList["jardin"]):
+
+	if medList["jardin"][i] < 10000 or medList["jardin"][i] > 40000:
+
+		medList["jardin"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["jardin"].sort()
+
+#épurer potager avec nos critère min max
+i=0
+while i < len(medList["potager"]):
+
+	if medList["potager"][i] < 5000 or medList["potager"][i] > 20000:
+
+		medList["potager"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["potager"].sort()
+
+#épurer laboratoire avec nos critère min max
+i=0
+while i < len(medList["laboratoire"]):
+
+	if medList["laboratoire"][i] < 15000 or medList["laboratoire"][i] > 40000:
+
+		medList["laboratoire"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["laboratoire"].sort()
+
+#épurer complexe sportif avec nos critère min max
+i=0
+while i < len(medList["complexe sportif"]):
+
+	if medList["complexe sportif"][i] < 15000 or medList["complexe sportif"][i] > 50000:
+
+		medList["complexe sportif"].pop(i)
+
+	else :
+		i += 1
+
+#trier des valeurs du tableaux
+medList["complexe sportif"].sort()
+
+print(medList)
 
 
 
