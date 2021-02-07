@@ -1,37 +1,38 @@
 <resultat>
-	<gagnant nom="nomProjet" fichier="cheminFichier">
-		<batimentsRetenus>
-			<batiment surface="surfaceBat" nom="nomTypeBat" />
-			<batiment surface="surfaceBat" nom="nomTypeBat" />
-			<batiment surface="surfaceBat" nom="nomTypeBat" />
-		</batimentsRetenus>
-		<volonte type="ecolo|bien-être|scientifique"/>
+	<!--
+		Blabla description des créateurs
+	-->
+	<gagnant nom="nomProjet" fichier="cheminFichier" nbVotes="int">
+		<batiments>
+			<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+			<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+			<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+		</batiments>
 	<gagnant/>
 
 	<stats>
 		<projets>
 			<projet nom="" fichier="" nbVotes="">
-				<batimentsRetenus>
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-				</batimentsRetenus>
+				<batiments>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+				</batiments>
 			</projet>
 			<projet nom="" fichier="" nbVotes="">
-				<batimentsRetenus>
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-					<batiment surface="surfaceBat" nom="nomTypeBat" />
-				</batimentsRetenus>
+				<batiments>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+					<batiment surface="surfaceBat" nom="nomTypeBat" retenu="true|false" nbBatiments="int"/>
+				</batiments>
 			</projet>
 		</projets>
 
 		<general>
 			<medianes>
-				<mediane value="" type="nomTypeBat"/>
-				<mediane value="" type="nomTypeBat"/>
+				<mediane value="" reference="nomTypeBat"/>
+				<mediane value="" reference="nomTypeBat"/>
 			</medianes>
-			<volonte type="ecolo|bien-être|scientifique"/>
 		</general>
 	</stats>
 </resultat>

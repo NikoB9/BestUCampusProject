@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="resultat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gagnant"/>
+        <xs:element ref="stats"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="gagnant">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="batiments">
+          <xs:attribute name="fichier" use="required"/>
+          <xs:attribute name="nbVotes" use="required" type="xs:integer"/>
+          <xs:attribute name="nom" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="stats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="projets"/>
+        <xs:element ref="general"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="projets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="projet"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="projet">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="batiments">
+          <xs:attribute name="fichier" use="required"/>
+          <xs:attribute name="nbVotes" use="required" type="xs:integer"/>
+          <xs:attribute name="nom" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="general">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="medianes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="medianes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="mediane"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="mediane">
+    <xs:complexType>
+      <xs:attribute name="reference" use="required"/>
+      <xs:attribute name="value" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="batiments">
+    <xs:sequence>
+      <xs:element ref="batiments"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="batiments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="batiment"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="batiment">
+    <xs:complexType>
+      <xs:attribute name="nbBatiments" use="required" type="xs:integer"/>
+      <xs:attribute name="nom" use="required"/>
+      <xs:attribute name="retenu" use="required" type="booleanType"/>
+      <xs:attribute name="surface" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="booleanType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+   </xs:restriction>
+  </xs:simpleType>
+
+
+</xs:schema>

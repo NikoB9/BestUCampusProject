@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<resultat>
+	<!--Pour ce projet participatif, nous avons décidé d'élire le projet qui correspondrait au mieux à nos besoin défini ci-dessous : 
+
+|        Nom        |    Nombre    | Surface totale min | Surface totale max |
+|___________________|______________|____________________|____________________|
+| Bâtiment scolaire |       3      |     50 000 m²      |      90 000 m²     |
+| Lieu de vie       |       1      |      4 000 m²      |      15 000 m²     |
+| Jardin            |       2      |     10 000 m²      |      40 000 m²     |
+| Potager           |       1      |      5 000 m²      |      20 000 m²     |
+| Laboratoire       |       1      |     15 000 m²      |      40 000 m²     |
+| Parking           |       2      |     10 000 m²      |      30 000 m²     |
+| Complexe sportif  |       1      |     15 000 m²      |      50 000 m²     |
+
+Nous avons imposé le nombre de bâtiments et le type de bâtiment mais les surfaces étaient libres. 
+Pour noter un projet, nous avons choisi la valeur médiane de tous les projets qui correspondaient à nos critères. 
+Exemple : Si le projet A a des bâtiments scolaire d'une surface totale de 55 000 m², le projet B, pour les mêmes bâtiments, une surface totale de 80 000 m², le projet C une surface de 68 000 m² et enfin le projet D une surface de 100 000m², le projet D sera exclu du concours pour cette catégorie et c'est le projet C qui prendra le point pour l'évaluation des bâtiments scolaire, car il a la surface médiane parmi les projets.
+Le projet qui gagne, est le projet qui aura le plus de vote. En cas d'égalité, le gagnant sera tiré au sort.
+-->
+	<gagnant nom="Projet_Alexandre" fichier="StudentProjects/Projet_Alexandre.kml" nbVotes="2">
+		<batiments>
+			<batiment nom="bâtiment scolaire" surface="63462.031068041775" retenu="True" nbBatiments="3"/>
+			<batiment nom="lieu de vie" surface="14686.47657039684" retenu="False" nbBatiments="1"/>
+			<batiment nom="parking" surface="35453.76610948916" retenu="False" nbBatiments="2"/>
+			<batiment nom="potager" surface="17606.075552963026" retenu="False" nbBatiments="1"/>
+			<batiment nom="jardin" surface="25852.290679905404" retenu="True" nbBatiments="2"/>
+			<batiment nom="laboratoire" surface="10814.43887422406" retenu="False" nbBatiments="1"/>
+			<batiment nom="complexe sportif" surface="12143.536680038664" retenu="False" nbBatiments="1"/>
+		</batiments>
+	</gagnant>
+	<stats>
+		<projets>
+			<projet nom="Projet_Alexandre" fichier="StudentProjects/Projet_Alexandre.kml" nbVotes="2">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="63462.031068041775" retenu="True" nbBatiments="3"/>
+					<batiment nom="lieu de vie" surface="14686.47657039684" retenu="False" nbBatiments="1"/>
+					<batiment nom="parking" surface="35453.76610948916" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="17606.075552963026" retenu="False" nbBatiments="1"/>
+					<batiment nom="jardin" surface="25852.290679905404" retenu="True" nbBatiments="2"/>
+					<batiment nom="laboratoire" surface="10814.43887422406" retenu="False" nbBatiments="1"/>
+					<batiment nom="complexe sportif" surface="12143.536680038664" retenu="False" nbBatiments="1"/>
+				</batiments>
+			</projet>
+			<projet nom="Projet_Ludo" fichier="StudentProjects/Projet_Ludo.kml" nbVotes="2">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="54440.76773257756" retenu="False" nbBatiments="3"/>
+					<batiment nom="lieu de vie" surface="4443.472000281999" retenu="False" nbBatiments="1"/>
+					<batiment nom="jardin" surface="16710.324719640786" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="5168.7557197537435" retenu="False" nbBatiments="1"/>
+					<batiment nom="laboratoire" surface="16160.005748443822" retenu="False" nbBatiments="1"/>
+					<batiment nom="parking" surface="22249.882285518714" retenu="True" nbBatiments="2"/>
+					<batiment nom="complexe sportif" surface="21442.236998863453" retenu="True" nbBatiments="1"/>
+				</batiments>
+			</projet>
+			<projet nom="Projet_Nicolas" fichier="StudentProjects/Projet_Nicolas.kml" nbVotes="1">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="62008.60097955074" retenu="True" nbBatiments="3"/>
+					<batiment nom="lieu de vie" surface="10940.049826984161" retenu="False" nbBatiments="1"/>
+					<batiment nom="parking" surface="21905.77941765218" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="17606.075552963026" retenu="False" nbBatiments="1"/>
+					<batiment nom="jardin" surface="41358.91341532052" retenu="False" nbBatiments="2"/>
+					<batiment nom="laboratoire" surface="14687.592807253519" retenu="False" nbBatiments="1"/>
+					<batiment nom="complexe sportif" surface="12143.536680038664" retenu="False" nbBatiments="1"/>
+				</batiments>
+			</projet>
+			<projet nom="Projet_Salomé" fichier="StudentProjects/Projet_Salome.kml" nbVotes="1">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="63837.44954018799" retenu="False" nbBatiments="3"/>
+					<batiment nom="parking" surface="31723.25368294948" retenu="False" nbBatiments="2"/>
+					<batiment nom="lieu de vie" surface="4499.998524951449" retenu="False" nbBatiments="1"/>
+					<batiment nom="jardin" surface="8616.643253889084" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="5903.072722097979" retenu="False" nbBatiments="1"/>
+					<batiment nom="laboratoire" surface="18582.853208988454" retenu="True" nbBatiments="1"/>
+					<batiment nom="complexe sportif" surface="13830.186881481317" retenu="False" nbBatiments="1"/>
+				</batiments>
+			</projet>
+			<projet nom="Projet_Thomas" fichier="StudentProjects/Projet_Thomas.kml" nbVotes="1">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="58040.37460120881" retenu="False" nbBatiments="3"/>
+					<batiment nom="lieu de vie" surface="16564.737943560904" retenu="False" nbBatiments="1"/>
+					<batiment nom="parking" surface="25410.0990087189" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="6749.375041519796" retenu="True" nbBatiments="1"/>
+					<batiment nom="jardin" surface="33219.26519556194" retenu="False" nbBatiments="2"/>
+					<batiment nom="laboratoire" surface="10528.209442254014" retenu="False" nbBatiments="1"/>
+					<batiment nom="complexe sportif" surface="21988.309563313356" retenu="False" nbBatiments="1"/>
+				</batiments>
+			</projet>
+			<projet nom="Projet_Tony" fichier="StudentProjects/Projet_Tony.kml" nbVotes="2">
+				<batiments>
+					<batiment nom="bâtiment scolaire" surface="77031.04491577606" retenu="False" nbBatiments="3"/>
+					<batiment nom="lieu de vie" surface="7385.140976167844" retenu="True" nbBatiments="1"/>
+					<batiment nom="jardin" surface="8086.646279053398" retenu="False" nbBatiments="2"/>
+					<batiment nom="potager" surface="6456.805627106732" retenu="True" nbBatiments="1"/>
+					<batiment nom="laboratoire" surface="18961.3278335407" retenu="False" nbBatiments="1"/>
+					<batiment nom="parking" surface="30208.168714011914" retenu="False" nbBatiments="2"/>
+					<batiment nom="complexe sportif" surface="21056.946469855335" retenu="False" nbBatiments="1"/>
+				</batiments>
+			</projet>
+		</projets>
+		<general>
+			<medianes>
+				<mediane reference="bâtiment scolaire" value="[62008.60097955074, 63462.031068041775]"/>
+				<mediane reference="parking" value="[22249.882285518714]"/>
+				<mediane reference="lieu de vie" value="[7385.140976167844]"/>
+				<mediane reference="jardin" value="[25852.290679905404]"/>
+				<mediane reference="potager" value="[6456.805627106732, 6749.375041519796]"/>
+				<mediane reference="laboratoire" value="[18582.853208988454]"/>
+				<mediane reference="complexe sportif" value="[21442.236998863453]"/>
+			</medianes>
+		</general>
+	</stats>
+</resultat>

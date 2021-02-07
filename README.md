@@ -41,20 +41,9 @@ Pour chaque type de bâtiment :
 On retient le projet de l'étudiant qui à le plus de votes (si plusieurs random parmis les gagnants)
 ````
 
-# Choix du meilleur projet - Première partie du fichier de résultat XML 
-* Nom du projet retenu
-* Bâtiments retenus grâce à la Médiane
-* Volonté du projet : écologie | bien-être étudiant | Scientifique ; Ce choix est réalisé en analysant la surface de certains ensemble de bâtiment par rapport à d'autres sur un même projet.
+# fichier de résultat XML 
+* Choix du meilleur projet
+* Stats 
+	* projets
+	* générales
 
-# Fichier de statistiques - Deuxième partie du fichier de résultat XML 
-* Pour chaque projet on retient :
-
-1- Nombre de bâtiments retenus comme meilleur choix (nombre de votes obtenus).
-
-2- Liste des bâtiments qui ont reçu un vote 
-
-* De manière générale :
-
-1- Mediane de taille pour chaque type de bâtiment parmis tous les projets
-
-2- Esprit générale des contributeurs : écologie | bien-être étudiant | scientifique
